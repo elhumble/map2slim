@@ -1,0 +1,149 @@
+reproduction
+nuclear chromosome
+cytoplasmic chromosome
+cell morphogenesis
+transcription factor
+nucleic acid
+immune system
+circulatory system
+molecular_function
+DNA binding
+RNA binding
+mRNA binding
+structural constituent
+GTPase activity
+helicase activity
+nuclease activity
+signal transducer
+structural molecule
+cellular_component
+extracellular region
+proteinaceous extracellular
+extracellular space
+cell wall
+intracellular
+cell
+nucleus
+nuclear envelope
+nucleoplasm
+chromosome
+nucleolus
+cytoplasm
+mitochondrion
+lysosome
+endosome
+vacuole
+peroxisome
+endoplasmic reticulum
+Golgi apparatus
+lipid particle
+microtubule organizing
+cytosol
+ribosome
+cytoskeleton
+plasma membrane
+cilium
+carbohydrate metabolic
+generation of
+DNA metabolic
+mRNA processing
+tRNA metabolic
+translation
+protein folding
+protein complex
+cellular protein
+cellular amino
+protein targeting
+lipid metabolic
+sulfur compound
+transport
+nucleocytoplasmic transport
+autophagy
+response to
+mitochondrion organization
+plasma membrane
+cytoskeleton organization
+vacuolar transport
+cell cycle
+chromosome segregation
+mitotic nuclear
+cell adhesion
+signal transduction
+cell-cell signaling
+aging
+cytoskeletal protein
+transcription factor
+translation factor
+biological_process
+methyltransferase activity
+cell death
+peptidase activity
+cell proliferation
+lipid binding
+protein transporter
+catabolic process
+biosynthetic process
+plastid
+thylakoid
+embryo development
+photosynthesis
+cytoplasmic membrane-bounded
+vesicle-mediated transport
+kinase activity
+oxidoreductase activity
+transferase activity,
+transferase activity,
+transferase activity,
+nucleotidyltransferase activity
+phosphatase activity
+hydrolase activity,
+hydrolase activity,
+lyase activity
+isomerase activity
+ligase activity
+ATPase activity
+secondary metabolic
+rRNA binding
+enzyme binding
+developmental maturation
+cellular component
+ribonucleoprotein complex
+transmembrane transporter
+cell differentiation
+extracellular matrix
+enzyme regulator
+external encapsulating
+triplet codon-amino
+RNA modification
+protein binding,
+cytoskeleton-dependent intracellular
+ubiquitin-like protein
+transposition
+cell junction
+cellular nitrogen
+nucleobase-containing compound
+growth
+locomotion
+ribosome biogenesis
+histone binding
+homeostatic process
+ion binding
+organelle
+protein complex
+pigmentation
+small molecule
+symbiosis, encompassing
+anatomical structure
+anatomical structure
+cell motility
+neurological system
+unfolded protein
+cofactor metabolic
+chromosome organization
+cell division
+protein maturation
+transmembrane transport
+membrane organization
+macromolecular complex
+cell wall
+nitrogen cycle

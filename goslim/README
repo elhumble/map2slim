@@ -1,0 +1,6 @@
+# generate text file of goslim terms and their associated name for use in further analysis
+
+grep "id: GO:" goslim_generic | grep -v alt | cut -d" " -f2 > terms.txt
+grep "name:" goslim_generic | grep -v alt | cut -d" " -f2,3 > names.txt
+paste terms.txt names.txt > goslim_generic.txt
+

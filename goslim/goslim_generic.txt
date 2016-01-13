@@ -1,0 +1,149 @@
+GO:0000003	reproduction
+GO:0000228	nuclear chromosome
+GO:0000229	cytoplasmic chromosome
+GO:0000902	cell morphogenesis
+GO:0000988	transcription factor
+GO:0001071	nucleic acid
+GO:0002376	immune system
+GO:0003013	circulatory system
+GO:0003674	molecular_function
+GO:0003677	DNA binding
+GO:0003723	RNA binding
+GO:0003729	mRNA binding
+GO:0003735	structural constituent
+GO:0003924	GTPase activity
+GO:0004386	helicase activity
+GO:0004518	nuclease activity
+GO:0004871	signal transducer
+GO:0005198	structural molecule
+GO:0005575	cellular_component
+GO:0005576	extracellular region
+GO:0005578	proteinaceous extracellular
+GO:0005615	extracellular space
+GO:0005618	cell wall
+GO:0005622	intracellular
+GO:0005623	cell
+GO:0005634	nucleus
+GO:0005635	nuclear envelope
+GO:0005654	nucleoplasm
+GO:0005694	chromosome
+GO:0005730	nucleolus
+GO:0005737	cytoplasm
+GO:0005739	mitochondrion
+GO:0005764	lysosome
+GO:0005768	endosome
+GO:0005773	vacuole
+GO:0005777	peroxisome
+GO:0005783	endoplasmic reticulum
+GO:0005794	Golgi apparatus
+GO:0005811	lipid particle
+GO:0005815	microtubule organizing
+GO:0005829	cytosol
+GO:0005840	ribosome
+GO:0005856	cytoskeleton
+GO:0005886	plasma membrane
+GO:0005929	cilium
+GO:0005975	carbohydrate metabolic
+GO:0006091	generation of
+GO:0006259	DNA metabolic
+GO:0006397	mRNA processing
+GO:0006399	tRNA metabolic
+GO:0006412	translation
+GO:0006457	protein folding
+GO:0006461	protein complex
+GO:0006464	cellular protein
+GO:0006520	cellular amino
+GO:0006605	protein targeting
+GO:0006629	lipid metabolic
+GO:0006790	sulfur compound
+GO:0006810	transport
+GO:0006913	nucleocytoplasmic transport
+GO:0006914	autophagy
+GO:0006950	response to
+GO:0007005	mitochondrion organization
+GO:0007009	plasma membrane
+GO:0007010	cytoskeleton organization
+GO:0007034	vacuolar transport
+GO:0007049	cell cycle
+GO:0007059	chromosome segregation
+GO:0007067	mitotic nuclear
+GO:0007155	cell adhesion
+GO:0007165	signal transduction
+GO:0007267	cell-cell signaling
+GO:0007568	aging
+GO:0008092	cytoskeletal protein
+GO:0008134	transcription factor
+GO:0008135	translation factor
+GO:0008150	biological_process
+GO:0008168	methyltransferase activity
+GO:0008219	cell death
+GO:0008233	peptidase activity
+GO:0008283	cell proliferation
+GO:0008289	lipid binding
+GO:0008565	protein transporter
+GO:0009056	catabolic process
+GO:0009058	biosynthetic process
+GO:0009536	plastid
+GO:0009579	thylakoid
+GO:0009790	embryo development
+GO:0015979	photosynthesis
+GO:0016023	cytoplasmic membrane-bounded
+GO:0016192	vesicle-mediated transport
+GO:0016301	kinase activity
+GO:0016491	oxidoreductase activity
+GO:0016746	transferase activity,
+GO:0016757	transferase activity,
+GO:0016765	transferase activity,
+GO:0016779	nucleotidyltransferase activity
+GO:0016791	phosphatase activity
+GO:0016798	hydrolase activity,
+GO:0016810	hydrolase activity,
+GO:0016829	lyase activity
+GO:0016853	isomerase activity
+GO:0016874	ligase activity
+GO:0016887	ATPase activity
+GO:0019748	secondary metabolic
+GO:0019843	rRNA binding
+GO:0019899	enzyme binding
+GO:0021700	developmental maturation
+GO:0022607	cellular component
+GO:0022618	ribonucleoprotein complex
+GO:0022857	transmembrane transporter
+GO:0030154	cell differentiation
+GO:0030198	extracellular matrix
+GO:0030234	enzyme regulator
+GO:0030312	external encapsulating
+GO:0030533	triplet codon-amino
+GO:0030555	RNA modification
+GO:0030674	protein binding,
+GO:0030705	cytoskeleton-dependent intracellular
+GO:0032182	ubiquitin-like protein
+GO:0032196	transposition
+GO:0034330	cell junction
+GO:0034641	cellular nitrogen
+GO:0034655	nucleobase-containing compound
+GO:0040007	growth
+GO:0040011	locomotion
+GO:0042254	ribosome biogenesis
+GO:0042393	histone binding
+GO:0042592	homeostatic process
+GO:0043167	ion binding
+GO:0043226	organelle
+GO:0043234	protein complex
+GO:0043473	pigmentation
+GO:0044281	small molecule
+GO:0044403	symbiosis, encompassing
+GO:0048646	anatomical structure
+GO:0048856	anatomical structure
+GO:0048870	cell motility
+GO:0050877	neurological system
+GO:0051082	unfolded protein
+GO:0051186	cofactor metabolic
+GO:0051276	chromosome organization
+GO:0051301	cell division
+GO:0051604	protein maturation
+GO:0055085	transmembrane transport
+GO:0061024	membrane organization
+GO:0065003	macromolecular complex
+GO:0071554	cell wall
+GO:0071941	nitrogen cycle
