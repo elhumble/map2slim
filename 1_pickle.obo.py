@@ -3,7 +3,6 @@ import sys, pickle
 '''
 Pickle go.obo file for use in parse_go_obo.py
 Usage is python 1_pickle.obo.py
-Author Emily Humble, 13 Jan
 '''
 ### 
 
