@@ -5,7 +5,7 @@ require(plyr)
 
 # read in annotations
 
-goSlim <- readLines("joined_transcriptome_SLIM.gaf")[-c(1:5)] # 24029 annotated contigs
+goSlim <- readLines("output/joined_transcriptome_SLIM.gaf")[-c(1:5)] # 24029 annotated contigs
 
 # we want GOslim which is in the first GO column
 
@@ -34,6 +34,7 @@ snps <- read.csv("../../snp_filtering_pipeline/data/processed/global_snps_hq.csv
         left_join(names, by = "Contig_Name") %>%
         mutate(Contig_Name = paste(Contig_Name, SNP_Position, sep="_")) %>%
         ddply("Contig_Name", summarize, goSlimTerm = paste(goSlimTerm, collapse=" "), name = paste(name, collapse = " "))
+
 
 # -----------------------------------
 # Search for 'immun' in KEYWORDS only 
@@ -73,7 +74,7 @@ for(i in immune)
 length(strsplit(immuneLines[1], split = "\t")[[1]])
 
 immuneTable <- matrix(ncol = 18,
-                  nrow = length(immuneLines))
+                      nrow = length(immuneLines))
 
 # fill table
 for(i in 1:length(immuneLines))
@@ -86,5 +87,6 @@ names(immuneTable) <- c("Contig_Name", "goTerm", "CC", "BP", "MF", "keywords") #
 
 immuneSnps <- read.csv("../../snp_filtering_pipeline/data/processed/global_snps_hq.csv", header = T)[,1:2] %>% # 34,718 snps
         inner_join(immuneTable, by = "Contig_Name") # %>%
-       # write.csv("immuneSNPs.csv", row.names = F)
+# write.csv("immuneSNPs.csv", row.names = F)
+
 

@@ -1,6 +1,6 @@
 '''
-Generate gene association file using GO annotation file and GOID to term aspect index file
-Usage is python 3_go2gaf.py inFile go.p > outFile.gaf
+Generate gene association file using GO annotation text file and GOID to term aspect index file
+Usage is python 3_go2gaf.py data/inFile data/go.p > data/outFile.gaf
 Output is .gaf file for use in GOSlim mapping
 Author Damian Kao (http://blog.nextgenetics.net/?e=5), modified by Emily Humble
 '''

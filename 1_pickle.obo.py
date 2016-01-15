@@ -13,8 +13,8 @@ def read_file(input_file):
         txt = list(line for line in txt if line)
     return txt
 
-go_obo_file = "go.obo" # go.obo in working dir
+go_obo_file = "data/go.obo" # go.obo in working dir
 
 obo_txt = read_file(go_obo_file)
-pickle.dump(obo_txt, open("go.p", "wb"))
+pickle.dump(obo_txt, open("data/go.p", "wb"))
 

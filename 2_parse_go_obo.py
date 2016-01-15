@@ -12,8 +12,8 @@ import sys, re, os, cPickle
 
 
 ### Parameters
-go_obo_file = 'go.obo'
-go_pickle = 'go.p'
+go_obo_file = 'data/go.obo'
+go_pickle = 'data/go.p'
 
 
 ### Define functions
