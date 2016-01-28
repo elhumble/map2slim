@@ -66,7 +66,9 @@ immuneSnps2 <- read.csv("../../snp_filtering_pipeline/data/processed/global_snps
 
 annotation <- readLines("../joined_transcriptome_ANNOTATED.txt")
 
-immune <- "immun"
+geneIDs <- c("DAF", "CTL1", "SHC")
+immune <- "(oxidative stress)"
+
 immuneLines <- NULL
 for(i in immune) 
         immuneLines <- c(immuneLines, annotation[grep(i, annotation, ignore.case=T)])
@@ -80,13 +82,13 @@ immuneTable <- matrix(ncol = 18,
 for(i in 1:length(immuneLines))
         immuneTable[i,1:length(strsplit(immuneLines[i], split = "\t")[[1]])] <- strsplit(immuneLines[i], split = "\t")[[1]]
 
-immuneTable <- data.frame(immuneTable)[,c(1,14:18)] 
-names(immuneTable) <- c("Contig_Name", "goTerm", "CC", "BP", "MF", "keywords") # 1618
+immuneTable <- data.frame(immuneTable)[,c(1,10,14:18)] 
+names(immuneTable) <- c("Contig_Name", "geneID", "goTerm", "CC", "BP", "MF", "keywords") # 1618
 
 # merge with snp dataframe to determine number of SNPs
 
 immuneSnps <- read.csv("../../snp_filtering_pipeline/data/processed/global_snps_hq.csv", header = T)[,1:2] %>% # 34,718 snps
-        inner_join(immuneTable, by = "Contig_Name") # %>%
-# write.csv("immuneSNPs.csv", row.names = F)
+        inner_join(immuneTable, by = "Contig_Name")  %>%
+        write.csv("~/Desktop/oxidativestressSNPs.csv", row.names = F)
 
 
