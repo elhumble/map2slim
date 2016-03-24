@@ -16,4 +16,6 @@ inFile is full GO annotation file
 4. Run `4_map2slim.sh` to get slim terms using owltools  
 Usage is 4_map2slim.sh
 
+test
+
 * `annotateSNPs.R` does some analysis with output slim file
