@@ -9,7 +9,7 @@ Save the GOslim you want in `goslim` directory
 1. Run `1_pickle.obo/py` to pickle go.obo into go.p  
 Usage is python 1_pickle.obo.py
 2. Run `2_parse_go_obo.py` to properly index go.p file  
-Usage is python 2_parse_go_out.py 
+Usage is python 2_parse_go_out.py
 3. Run `3_go2gaf.py` to generate gene association file  
 Usage is python 3_go2gaf.py data/inFile data/go.p > data/outFile.gaf  
 inFile is full GO annotation file
