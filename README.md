@@ -15,7 +15,4 @@ Usage is python 3_go2gaf.py data/inFile data/go.p > data/outFile.gaf
 inFile is full GO annotation file
 4. Run `4_map2slim.sh` to get slim terms using owltools  
 Usage is 4_map2slim.sh
-
-test
-
-* `annotateSNPs.R` does some analysis with output slim file
+5. `annotateSNPs.R` does some analysis with output slim file
