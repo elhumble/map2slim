@@ -1,7 +1,8 @@
 #!/usr/bin/python
 
 '''
-Parse GO term from http://purl.obolibrary.org/obo/go.obo to generate proper index file for use in making a gaf file
+Parse GO terms from http://purl.obolibrary.org/obo/go.obo to generate proper index file for use in making a gaf file
+Need go.obo and go.p
 Usage is python 2_parse_go_out.py 
 Output is go.p pickled GOIDs index file
 Author Byoungnam Min on Jul 2, 2015
