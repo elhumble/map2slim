@@ -3,7 +3,9 @@
 Processing steps to map gene ontologies onto a GOslim
 
 First, download go.obo from http://geneontology.org/ontology/go.obo and save as `data/go.obo`
+
 Save the annotation file you want to slim down (contig name followed by tab sep GO terms) in `data/`
+
 Save the GOslim you want in `goslim` directory (for example http://www.geneontology.org/ontology/subsets/goslim_generic.obo)
 
 1. Run `1_pickle.obo/py` to pickle go.obo into go.p
