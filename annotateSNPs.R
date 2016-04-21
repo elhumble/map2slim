@@ -1,7 +1,8 @@
 require(dplyr)
 require(plyr)
-
-# script to combine GO SLIM annotations with SNP data
+# -----------------------------------------
+# Combine GO SLIM annotations with SNP data
+# -----------------------------------------
 
 # read in annotations
 
@@ -28,17 +29,30 @@ names(goTable) <- c("Contig_Name", "goSlimTerm")
 names <- read.table("goslim/goslim_generic.txt", sep = "\t", col.names = c("goSlimTerm", "name")) %>% # readr?
         right_join(goTable, by = "goSlimTerm")
 
+# prepare sumamry file
+
+ordered_names <- read.table("../../joe_michael/summary_contig_order.txt", header = T)
+        
+sorted_names <- names %>%
+        mutate(goSlim = do.call(paste, c(names[c(1,2)], sep = "_"))) %>%
+        .[-c(1,2)] %>%
+        aggregate(goSlim~Contig_Name, ., paste, collapse=",") %>%
+        right_join(ordered_names, by = "Contig_Name") %>%
+        write.csv("output/joined_transcriptome_GOslim.csv", row.names = F)
+
 # merge with SNPs collapse contigs with duplicate GOterms
 
-snps <- read.csv("../../snp_filtering_pipeline/data/processed/global_snps_hq.csv", header = T)[,1:2] %>% # 34,718 snps
+snps <- read.csv("../../joe_michael/summary_files/global_SNPs_34718.csv", header = T)[,1:2] %>% # 34,718 snps
         left_join(names, by = "Contig_Name") %>%
         mutate(Contig_Name = paste(Contig_Name, SNP_Position, sep="_")) %>%
         ddply("Contig_Name", summarize, goSlimTerm = paste(goSlimTerm, collapse=" "), name = paste(name, collapse = " "))
 
 
-# -----------------------------------
-# Search for 'immun' in KEYWORDS only 
-# -----------------------------------
+# -------------------------------------------------------
+# Searching for candidate SNPs using full annotation file
+# -------------------------------------------------------
+
+# Search for IMMUNE in KEYWORDS only 
 
 annotation <- readLines("../joined_transcriptome_ANNOTATED.txt")
 
@@ -56,18 +70,18 @@ immuneTable2 <- data.frame(immuneTable2)[-1,c(1,14:18)] %>%
 
 # merge with snp dataframe to determine number of SNPs
 
-immuneSnps2 <- read.csv("../../snp_filtering_pipeline/data/processed/global_snps_hq.csv", header = T)[,1:2] %>% # 34,718 snps
+immuneSnps2 <- read.csv("../../joe_michael/summary_files/global_SNPs_34718.csv", header = T)[,1:2] %>% # 34,718 snps
         inner_join(immuneTable2, by = "Contig_Name") %>%
         write.csv("immuneSNPs_keywords.csv", row.names = F)
 
-# ---------------------------------
-# Search for 'immun' in whole file 
-# ---------------------------------
+# -----------------------------------------------------------------------------
+# Search for IMMUNE in whole file 
 
 annotation <- readLines("../joined_transcriptome_ANNOTATED.txt")
 
-geneIDs <- c("DAF", "CTL1", "SHC")
-immune <- "(oxidative stress)"
+#geneIDs <- c("DAF", "CTL1", "SHC")
+immune <- c("immun","antigen", "chemokine", "T cell", "MHC", "Antibody",
+                "histocompatibility", "Interleukin", "Leucocyte", "Lymphocyte")
 
 immuneLines <- NULL
 for(i in immune) 
@@ -87,8 +101,8 @@ names(immuneTable) <- c("Contig_Name", "geneID", "goTerm", "CC", "BP", "MF", "ke
 
 # merge with snp dataframe to determine number of SNPs
 
-immuneSnps <- read.csv("../../snp_filtering_pipeline/data/processed/global_snps_hq.csv", header = T)[,1:2] %>% # 34,718 snps
+immuneSnps <- read.csv("../../joe_michael/summary_files/global_SNPs_34718.csv", header = T)[,1:2] %>% # 34,718 snps
         inner_join(immuneTable, by = "Contig_Name")  %>%
-        write.csv("~/Desktop/oxidativestressSNPs.csv", row.names = F)
+        write.csv("~/Desktop/immuneSNPs.csv", row.names = F)
 
 
