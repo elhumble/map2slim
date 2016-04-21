@@ -31,7 +31,7 @@ names <- read.table("goslim/goslim_generic.txt", sep = "\t", col.names = c("goSl
 
 # prepare sumamry file
 
-ordered_names <- read.table("../../joe_michael/summary_contig_order.txt", header = T)
+ordered_names <- read.table("../../joe_michael/summary_files/summary_contig_order.txt", header = T)
         
 sorted_names <- names %>%
         mutate(goSlim = do.call(paste, c(names[c(1,2)], sep = "_"))) %>%
@@ -72,12 +72,10 @@ immuneTable2 <- data.frame(immuneTable2)[-1,c(1,14:18)] %>%
 
 immuneSnps2 <- read.csv("../../joe_michael/summary_files/global_SNPs_34718.csv", header = T)[,1:2] %>% # 34,718 snps
         inner_join(immuneTable2, by = "Contig_Name") %>%
-        write.csv("immuneSNPs_keywords.csv", row.names = F)
+        write.csv("output/immuneSNPs_keywords.csv", row.names = F)
 
 # -----------------------------------------------------------------------------
 # Search for IMMUNE in whole file 
-
-annotation <- readLines("../joined_transcriptome_ANNOTATED.txt")
 
 #geneIDs <- c("DAF", "CTL1", "SHC")
 immune <- c("immun","antigen", "chemokine", "T cell", "MHC", "Antibody",
@@ -102,7 +100,62 @@ names(immuneTable) <- c("Contig_Name", "geneID", "goTerm", "CC", "BP", "MF", "ke
 # merge with snp dataframe to determine number of SNPs
 
 immuneSnps <- read.csv("../../joe_michael/summary_files/global_SNPs_34718.csv", header = T)[,1:2] %>% # 34,718 snps
-        inner_join(immuneTable, by = "Contig_Name")  %>%
-        write.csv("~/Desktop/immuneSNPs.csv", row.names = F)
+        inner_join(immuneTable, by = "Contig_Name") %>%
+        write.csv("output/immuneSNPs.csv", row.names = F)
 
+# -----------------------------------------------------------------------------
+# Search for MHC in whole file 
+
+#geneIDs <- c("DAF", "CTL1", "SHC")
+mhc <- c("MHC", "histocompatibility")
+
+mhcLines <- NULL
+for(i in mhc) 
+        mhcLines <- c(mhcLines, annotation[grep(i, annotation, ignore.case=T)])
+
+length(strsplit(mhcLines[1], split = "\t")[[1]])
+
+mhcTable <- matrix(ncol = 18,
+                      nrow = length(mhcLines))
+
+# fill table
+for(i in 1:length(mhcLines))
+        mhcTable[i,1:length(strsplit(mhcLines[i], split = "\t")[[1]])] <- strsplit(mhcLines[i], split = "\t")[[1]]
+
+mhcTable <- data.frame(mhcTable)[,c(1,10,14:18)] 
+names(mhcTable) <- c("Contig_Name", "geneID", "goTerm", "CC", "BP", "MF", "keywords") # 1618
+
+# merge with snp dataframe to determine number of SNPs
+
+mhcSnps <- read.csv("../../joe_michael/summary_files/global_SNPs_34718.csv", header = T)[,1:2] %>% # 34,718 snps
+        inner_join(mhcTable, by = "Contig_Name")  %>%
+        write.csv("output/mhcSNPs.csv", row.names = F)
+
+# -----------------------------------------------------------------------------
+# Search for OXIDATIVE STRESS in whole file 
+
+#geneIDs <- c("DAF", "CTL1", "SHC")
+oxidative_stress <- c("oxidative stress")
+
+oxi_stressLines <- NULL
+for(i in oxidative_stress) 
+        oxi_stressLines <- c(oxi_stressLines, annotation[grep(i, annotation, ignore.case=T)])
+
+length(strsplit(oxi_stressLines[1], split = "\t")[[1]])
+
+oxi_stressTable <- matrix(ncol = 18,
+                      nrow = length(oxi_stressLines))
+
+# fill table
+for(i in 1:length(oxi_stressLines))
+        oxi_stressTable[i,1:length(strsplit(oxi_stressLines[i], split = "\t")[[1]])] <- strsplit(oxi_stressLines[i], split = "\t")[[1]]
+
+oxi_stressTable <- data.frame(oxi_stressTable)[,c(1,10,14:18)] 
+names(oxi_stressTable) <- c("Contig_Name", "geneID", "goTerm", "CC", "BP", "MF", "keywords") # 1618
+
+# merge with snp dataframe to determine number of SNPs
+
+oxi_stressSNPs <- read.csv("../../joe_michael/summary_files/global_SNPs_34718.csv", header = T)[,1:2] %>% # 34,718 snps
+        inner_join(oxi_stressTable, by = "Contig_Name")  %>%
+        write.csv("output/oxidative_stressSNPs.csv", row.names = F)
 
